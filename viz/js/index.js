@@ -648,7 +648,7 @@ function collapse(d) {
 }
 
 function sendReturnMessage() {
-  window.parent.postMessage("test", "*");
+  window.parent.postMessage(data.id, "*");
 }
 
 update(root);
