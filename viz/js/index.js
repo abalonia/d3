@@ -647,4 +647,8 @@ function collapse(d) {
   }
 }
 
+function sendReturnMessage(click) {
+  window.parent.postMessage(click, "*");
+}
+
 update(root);
