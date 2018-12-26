@@ -647,8 +647,8 @@ function collapse(d) {
   }
 }
 
-function sendReturnMessage(click) {
-  window.parent.postMessage(click, "*");
+function sendReturnMessage() {
+  window.parent.postMessage("test", "*");
 }
 
 update(root);
