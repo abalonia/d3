@@ -22,6 +22,22 @@
   
 
     <script  src="js/index.js"></script>
+  
+  <script type="text/javascript">
+function init () {
+  // receiving message
+  window.onmessage = (event) => {
+    if (event.data) {
+      console.log("HTML Code Element received a message!");
+      insertMessage(event.data);
+    }
+  }
+}
+// message sent to wix page
+function sendReturnMessage(nodeEnter) {
+  window.parent.postMessage(nodeEnter, "*");
+}
+</script>
 
 
 
