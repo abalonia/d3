@@ -24,19 +24,11 @@
     <script  src="js/index.js"></script>
   
   <script type="text/javascript">
-function init () {
-  // receiving message
-  window.onmessage = (event) => {
-    if (event.data) {
-      console.log("HTML Code Element received a message!");
-      insertMessage(event.data);
-    }
+
+function respond() {
+    window.parent.postMessage("Message for page code", "*");
   }
-}
-// message sent to wix page
-function sendReturnMessage(nodeEnter) {
-  window.parent.postMessage(nodeEnter, "*");
-}
+
 </script>
 
 
