@@ -647,6 +647,7 @@ function collapse(d) {
     d._children = d.children;
     d._children.forEach(collapse);
     d.children = null;
+    collapse(root);
   }
 }
 
