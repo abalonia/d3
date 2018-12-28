@@ -541,7 +541,6 @@ function update(source) {
     .remove();
   // Enter any new nodes at the parent's previous position.
   var nodeEnter = node.enter()
-    .postMessage({"type":"click"} , "*")
     .append("g")
     .attr("class", "node")
     .attr("transform", function(d) {
@@ -632,6 +631,7 @@ function nbEndNodes(n) {
 
 function click(d) {
   if (d.children) {
+    window.parent.postMessage("click", "*");
     d._children = d.children;
     d.children = null;
   } else {
