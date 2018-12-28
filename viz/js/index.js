@@ -630,7 +630,7 @@ function nbEndNodes(n) {
 }
 
 function click(d) {
-  if (d.children != 0) {
+  if (d.children) {
     window.parent.postMessage("click", "*");
     d._children = d.children;
     d.children = null;
@@ -638,11 +638,17 @@ function click(d) {
   else {
   d.children = d._children;
   d._children = null;
-  window.parent.postMessage("root", "*");	  
-	 
   }
   update(d);
 }
+
+function click2(d) {
+  if (d._children = null) {
+    window.parent.postMessage("root", "*");	  
+  }
+  update(d);
+}
+
 
 function collapse(d) {
   if (d.children) {
