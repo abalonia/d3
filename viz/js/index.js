@@ -601,8 +601,7 @@ function update(source) {
 
   nodeExit.select("circle").attr("r", 0);
   nodeExit.select("text").style("fill-opacity", 0);
-  nodeExit.window.parent.postMessage("click", "*");
-
+  
   // Stash the old positions for transition.
   nodes.forEach(function(d) {
     d.x0 = d.x;
@@ -636,6 +635,7 @@ function click(d) {
     d._children = d.children;
     d.children = null;
   } else {
+    window.parent.postMessage("ready", "*");	  
     d.children = d._children;
     d._children = null;
   }
@@ -652,6 +652,7 @@ function collapse(d) {
 
 function ready(){
     window.parent.postMessage({"type":"click"}, "*");
+    window.parent.postMessage("type":"ready", "*");	
   }
 
 update(root);
