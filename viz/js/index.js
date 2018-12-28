@@ -634,12 +634,13 @@ function click(d) {
     window.parent.postMessage("click", "*");
     d._children = d.children;
     d.children = null;
+  }
+  else if(d.children = null){
+       window.parent.postMessage("root", "*");
+  
   } else {
     d.children = d._children;
     d._children = null;
-    if(nodes[d].children = null){
-       window.parent.postMessage("root", "*");
-  }
 	 
   }
   update(d);
