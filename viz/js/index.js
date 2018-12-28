@@ -652,7 +652,7 @@ function collapse(d) {
 
 function ready(){
     window.parent.postMessage({"type":"click"}, "*");
-    window.parent.postMessage("type":"ready", "*");	
+ 	
   }
 
 update(root);
