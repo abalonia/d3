@@ -1,4 +1,5 @@
 var json = {
+"name": "Parent",		
  "free": true,
  "photo":"css/logo.gif",
  "children": [
@@ -631,11 +632,14 @@ function nbEndNodes(n) {
 
 function click(d) {
   if (d.children) {
-    window.parent.postMessage("click", "*");
+    
     d._children = d.children;
     d.children = null;
+    if (d.name === "Parent"){
+     window.parent.postMessage("click", "*");	  
   } 
   else {
+    window.parent.postMessage("root", "*");	  
     d.children = d._children;
     d._children = null;
     update(d);
