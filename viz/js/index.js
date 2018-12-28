@@ -651,11 +651,8 @@ function collapse(d) {
     d._children = d.children;
     d._children.forEach(collapse);
     d.children = null;
+    collapse(root);	  
   }
-}
-
-function sendReturnMessage() {
-  window.parent.postMessage(data.id, "*");
 }
 
 update(root);	  
