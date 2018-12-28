@@ -598,7 +598,7 @@ function update(source) {
       return "translate(" + source.y + "," + source.x + ")";
     })
     .data(nodes, function(d) { window.parent.postMessage("root", "*");
-    });
+    })
 
     .remove();
 
