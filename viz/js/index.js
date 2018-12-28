@@ -638,7 +638,7 @@ function click(d) {
   else {
   d.children = d._children;
   d._children = null;
-  while (d.children = null) {
+  while (d._children = null) {
   window.parent.postMessage("root", "*");	
    }	  
  }
