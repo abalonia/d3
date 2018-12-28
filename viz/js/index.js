@@ -652,8 +652,8 @@ function collapse(d) {
   }
 }
 function ready(d){
-   if(nodes[d].children === null){
+   
        window.parent.postMessage("root", "*");
-  }
+  
 }
 update(root);
