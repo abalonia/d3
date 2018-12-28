@@ -597,9 +597,6 @@ function update(source) {
     .attr("transform", function(d) {
       return "translate(" + source.y + "," + source.x + ")";
     })
-    .data(nodes, function(d) { window.parent.postMessage("root", "*");
-    })
-
     .remove();
 
   nodeExit.select("circle").attr("r", 0);
@@ -637,6 +634,8 @@ function click(d) {
     window.parent.postMessage("click", "*");
     d._children = d.children;
     d.children = null;
+  } else if (d.children = 0 ) {
+    window.parent.postMessage("root", "*");
   }
  
   else {
