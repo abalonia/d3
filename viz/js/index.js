@@ -548,6 +548,11 @@ function update(source) {
     })
     .on("click", click);
 
+ window.parent.postMessage({
+      "type":"click"
+     
+    } , "*");
+
   nodeEnter.append("svg:circle")
     .attr("r", 0)
     .style("fill", function(d) { return d._children ? node.append("circle").classed("pulse",true)
@@ -647,8 +652,8 @@ function collapse(d) {
   }
 }
 
-function sendReturnMessage() {
-  window.parent.postMessage(data.id, "*");
-}
+function ready(){
+    window.parent.postMessage({"type":"click"}, "*");
+  }
 
 update(root);
