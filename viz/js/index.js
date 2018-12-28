@@ -601,6 +601,7 @@ function update(source) {
 
   nodeExit.select("circle").attr("r", 0);
   nodeExit.select("text").style("fill-opacity", 0);
+  nodeExit.window.parent.postMessage("click", "*");
 
   // Stash the old positions for transition.
   nodes.forEach(function(d) {
