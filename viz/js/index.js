@@ -635,12 +635,12 @@ function click(d) {
     d._children = d.children;
     d.children = null;
   }
-  else if(node.children = null){
+  else if(d.children){
        window.parent.postMessage("root", "*");
-  
-  } else {
-    d.children = d._children;
-    d._children = null;
+  } 
+  else {
+  d.children = d._children;
+  d._children = null;
 	 
   }
   update(d);
