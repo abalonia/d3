@@ -1,5 +1,5 @@
 var json = {
- "name": "Parent",		
+ "name": "Services",		
  "free": true,
  "photo":"css/logo.gif",
  "children": [
@@ -634,11 +634,11 @@ function click(d) {
   if (d.children) {
 	d._children = d.children;
     d.children = null;
-	if (d.name === "Parent"){
-		alert("outside");
+	if (d.name === "Services"){
+		window.parent.postMessage("root", "*");;
 	}
   } else  {
-    alert("inside");
+    window.parent.postMessage("click", "*");
 	d.children = d._children;
     d._children = null;
   }
