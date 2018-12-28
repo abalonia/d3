@@ -658,6 +658,7 @@ function ready(d){
     d._parent = null;
     window.parent.postMessage("root", "*");
   }
+update(d);
 }
  
 update(root);
