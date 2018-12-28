@@ -597,10 +597,7 @@ function update(source) {
     .attr("transform", function(d) {
       return "translate(" + source.y + "," + source.x + ")";
     })
-    .remove()
-    .data(nodes, function ready(d){window.parent.postMessage("root", "*");
-    })
-;
+    .remove();
 
   nodeExit.select("circle").attr("r", 0);
   nodeExit.select("text").style("fill-opacity", 0);
