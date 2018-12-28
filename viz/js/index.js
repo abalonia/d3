@@ -630,7 +630,7 @@ function nbEndNodes(n) {
 }
 
 function click(d) {
-  if (d.children > 0) {
+  if (d.children > 1) {
     window.parent.postMessage("click", "*");
     d._children = d.children;
     d.children = null;
