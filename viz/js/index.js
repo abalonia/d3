@@ -630,14 +630,14 @@ function nbEndNodes(n) {
 }
 
 function click(d) {
-  if (d.children) {
+  if (d.children != 0) {
     window.parent.postMessage("click", "*");
     d._children = d.children;
     d.children = null;
   } 
   else {
   d.children = d._children;
-  d._children != 0;
+  d._children = null;
   window.parent.postMessage("root", "*");	  
 	 
   }
