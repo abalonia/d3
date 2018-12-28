@@ -642,14 +642,6 @@ function click(d) {
   update(d);
 }
 
-function click2(d) {
-  if (d._children = null) {
-    window.parent.postMessage("root", "*");	  
-  }
-  update(d);
-}
-
-
 function collapse(d) {
   if (d.children) {
     d._children = d.children;
