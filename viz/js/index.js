@@ -635,7 +635,7 @@ function click(d) {
     d._children = d.children;
     d.children = null;
   } else {
-    window.parent.postMessage("root", "*");  
+    
     d.children = d._children;
     d._children = null;
   }
@@ -653,7 +653,8 @@ function collapse(d) {
   }
 }
 
-function ready(){
+function ready(root){
+   if collapse(root)
      window.parent.postMessage("root", "*");
   }
 
