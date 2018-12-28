@@ -648,14 +648,13 @@ function collapse(d) {
     d._children.forEach(collapse);
     d.children = null;
     collapse(root);
-    window.parent.postMessage("collapse(root)", "*");	
-    
+    window.parent.postMessage("ready", "*");
+        
   }
 }
 
 function ready(){
-    window.parent.postMessage({collapse(root)}, "*");
- 	
+     window.parent.postMessage("click", "*");
   }
 
 update(root);
