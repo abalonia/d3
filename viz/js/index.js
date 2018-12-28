@@ -635,10 +635,10 @@ function click(d) {
     d._children = d.children;
     d.children = null;
   } 
-  else (d.id = 0) {
+  else {
   d.children = d._children;
   d._children = null;
-  window.parent.postMessage("root", "*");	  
+  window.parent.postMessage("d.id", "*");	  
 	 
   }
   update(d);
