@@ -656,6 +656,8 @@ function collapse(d) {
   }
 }
 
-
-
+function ready(d){
+     window.parent.postMessage("root", "*");
+  }
+ 
 update(root);
