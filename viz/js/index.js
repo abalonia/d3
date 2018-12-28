@@ -630,16 +630,19 @@ function nbEndNodes(n) {
   return nb;
 }
 
-
-	  
 function click(d) {
   if (d.children) {
-    d._children = d.children;
+	d._children = d.children;
     d.children = null;
-  } else {
-    d.children = d._children;
+	if (d.name === "Parent"){
+		alert("outside");
+	}
+  } else  {
+    alert("inside");
+	d.children = d._children;
     d._children = null;
   }
+
   update(d);
 }
 
