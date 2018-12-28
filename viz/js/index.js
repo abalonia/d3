@@ -646,7 +646,6 @@ function collapse(d) {
     d._children = d.children;
     d._children.forEach(collapse);
     d.children = null;
-     window.parent.postMessage("root", "*");		  
     collapse(root);
      
   }
