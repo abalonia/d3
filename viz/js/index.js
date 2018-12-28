@@ -1,5 +1,5 @@
 var json = {
-"name": "Parent",		
+ "name": "Parent",		
  "free": true,
  "photo":"css/logo.gif",
  "children": [
@@ -630,19 +630,17 @@ function nbEndNodes(n) {
   return nb;
 }
 
+
+	  
 function click(d) {
   if (d.children) {
-    
     d._children = d.children;
     d.children = null;
-    if (d.name === "Parent"){
-     window.parent.postMessage("click", "*");	  
-  } 
-  else {
-    window.parent.postMessage("root", "*");	  
+  } else {
     d.children = d._children;
     d._children = null;
-    update(d);
+  }
+  update(d);
 }
 
 function collapse(d) {
@@ -650,9 +648,11 @@ function collapse(d) {
     d._children = d.children;
     d._children.forEach(collapse);
     d.children = null;
-    collapse(root);
-     
   }
 }
 
-update(root);
+function sendReturnMessage() {
+  window.parent.postMessage(data.id, "*");
+}
+
+update(root);	  
