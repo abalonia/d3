@@ -635,7 +635,7 @@ function click(d) {
     d._children = d.children;
     d.children = null;
   } else {
-    window.parent.postMessage("ready", "*");	  
+      
     d.children = d._children;
     d._children = null;
   }
@@ -648,11 +648,12 @@ function collapse(d) {
     d._children.forEach(collapse);
     d.children = null;
     collapse(root);
+    window.parent.postMessage("ready", "*");	
   }
 }
 
 function ready(){
-    window.parent.postMessage({"type":"click"}, "*");
+    window.parent.postMessage({"type":"ready"}, "*");
  	
   }
 
