@@ -653,9 +653,12 @@ function collapse(d) {
   }
 }
 
-function ready(){
-   if collapse(root) {
-     window.parent.postMessage("root", "*");
-  }
+
+function collapseAll(){
+    root.children.forEach(collapse);
+    collapse(root);
+    update(root);
+    window.parent.postMessage("root", "*");
 }
+
 update(root);
