@@ -1,5 +1,5 @@
 var json = {
- "name": "Services",		
+ "name": "",		
  "free": true,
  "photo":"css/logo.gif",
  "children": [
@@ -634,7 +634,7 @@ function click(d) {
   if (d.children) {
 	d._children = d.children;
     d.children = null;
-	if (d.name === "Services"){
+	if (d.name === ""){
 		window.parent.postMessage("root", "*");;
 	}
   } else  {
