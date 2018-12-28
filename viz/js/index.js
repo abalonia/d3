@@ -648,17 +648,11 @@ function collapse(d) {
     d._children.forEach(collapse);
     d.children = null;
     collapse(root);
-   
-        
   }
 }
-
-
-function collapseAll(){
-    root.children.forEach(collapse);
-    collapse(root);
-    update(root);
-    window.parent.postMessage("root", "*");
+function ready(d){
+   if(nodes[d].children === null){
+       window.parent.postMessage("root", "*");
+  }
 }
-
 update(root);
