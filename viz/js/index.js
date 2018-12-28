@@ -654,8 +654,8 @@ function collapse(d) {
 }
 
 function ready(){
-   if collapse(root)
+   if collapse(root) {
      window.parent.postMessage("root", "*");
   }
-
+}
 update(root);
