@@ -635,7 +635,7 @@ function click(d) {
     d._children = d.children;
     d.children = null;
   } 
-   else if (d.ancestor) {
+   else if (d.parent) {
     window.parent.postMessage("root", "*");
   }
  
