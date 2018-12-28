@@ -653,7 +653,7 @@ function collapse(d) {
   }
 }
 
-function ready(root){
+function ready(){
    if collapse(root)
      window.parent.postMessage("root", "*");
   }
