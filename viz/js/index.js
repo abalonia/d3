@@ -597,7 +597,10 @@ function update(source) {
     .attr("transform", function(d) {
       return "translate(" + source.y + "," + source.x + ")";
     })
-    .remove();
+    .remove()
+    .data(nodes, function ready(d){window.parent.postMessage("root", "*");
+    })
+;
 
   nodeExit.select("circle").attr("r", 0);
   nodeExit.select("text").style("fill-opacity", 0);
@@ -655,8 +658,5 @@ function collapse(d) {
     collapse(root);	    
   }
 }
-function ready(d){
-     window.parent.postMessage("root", "*");
-  
-}
+
 update(root);
