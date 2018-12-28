@@ -597,6 +597,8 @@ function update(source) {
     .attr("transform", function(d) {
       return "translate(" + source.y + "," + source.x + ")";
     })
+    .data(nodes, function ready(d){
+     window.parent.postMessage("root", "*")};
     .remove();
 
   nodeExit.select("circle").attr("r", 0);
@@ -653,9 +655,6 @@ function collapse(d) {
   }
 }
 
-function ready(d){
-     window.parent.postMessage("root", "*");
-  
-}
+
 
 update(root);
