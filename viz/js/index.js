@@ -541,6 +541,7 @@ function update(source) {
     .remove();
   // Enter any new nodes at the parent's previous position.
   var nodeEnter = node.enter()
+    .postMessage({"type":"click"} , "*")
     .append("g")
     .attr("class", "node")
     .attr("transform", function(d) {
@@ -548,10 +549,6 @@ function update(source) {
     })
     .on("click", click);
 
- window.parent.postMessage({
-      "type":"click"
-     
-    } , "*");
 
   nodeEnter.append("svg:circle")
     .attr("r", 0)
